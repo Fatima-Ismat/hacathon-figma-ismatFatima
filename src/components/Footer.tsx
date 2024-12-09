@@ -128,7 +128,7 @@ const Footer = () => {
 
         <div className="w-[100%] px-4 py-6 bg-gray-100 dark:bg-[#FF9F0D] md:flex md:items-center md:justify-between">
           <span className="text-sm text-[#FFFFFF] sm:text-center">
-            Copyright @ 2024 by Sufyan Khan. All Rights Reserved.
+            Copyright @ 2024 by Ismat Fatima. All Rights Reserved.
           </span>
 
           <div className="flex justify-center gap-[14px] mt-4 md:mt-0">
