@@ -102,8 +102,8 @@ function Hero() {
       <div className="mt-[50px] md:mt-0 ">
         <Image src="/about1.png" alt="Hero Image" className="" width={336} height={536} />
         <div className="flex flex-col md:flex-row mt-[16px] md:mt-[0]">
-          <Image src="" alt="Hero Image" className="mr-[16px] pt-[40px]" />
-          <Image src="" alt="Hero Image" className="pt-[40px]" />
+          <Image src="/about2.png" alt="Hero Image" className="mr-[16px] pt-[40px]" />
+          <Image src="about3.png" alt="Hero Image" className="pt-[40px]" />
         </div>
       </div>
     </section>

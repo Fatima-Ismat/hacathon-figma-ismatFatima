@@ -11,12 +11,22 @@ const FoodCategory = () => {
   ];
 
   return (
-    <section className="bg-black text-white py-16 px-6">
-      <div className="container mx-auto text-center">
-        {/* Title */}
-        <h2 className="text-3xl md:text-4xl font-bold mb-12">
-          <span className="text-orange-500">Choose</span> Food Item
-        </h2>
+    // <section className="bg-black text-white py-16 px-6">
+    //   <div className="container mx-auto text-center">
+    //     {/* Title */}
+    //     <h2 className="text-3xl md:text-4xl font-bold mb-12">
+    //       <span className="text-orange-500">Choose</span> Food Item
+    //     </h2>
+
+    <section className="bg-black md:px-[135px] px-6 py-[50px]">
+        <div className="flex flex-col justify-center items-center">
+          <h1 className="md:text-[32px] text-[24px] font-normal text-[#FF9F0D] font-whitespace-nowrap font-greatVibes">
+            Food Category
+          </h1>
+          <h1 className="text-[20px] text-white md:text-[50px] font-bold whitespace-nowrap md:whitespace-normal text-center">
+            <span className="text-[#FF9F0D]">Ch</span>oose Food Item
+          </h1>
+        </div>
 
         {/* Grid of food items */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -38,7 +48,7 @@ const FoodCategory = () => {
             </div>
           ))}
         </div>
-      </div>
+      
     </section>
   );
 };

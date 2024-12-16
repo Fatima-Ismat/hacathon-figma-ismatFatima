@@ -7,7 +7,7 @@ interface HeroProps {
 
 function Hero({ text }: HeroProps) {  // text ko destructure kar ke receive kiya
   return (
-    <section className="bg-black px-3 md:px-[80px] lg:px-[135px] flex flex-col justify-evenly md:flex-row md:items-center py-[50px]">
+    <section className="bg-[#0D0D0D] px-3 md:px-[80px] lg:px-[135px] flex flex-col justify-evenly md:flex-row md:items-center py-[50px]">
       {/* Heading */}
       <div className="text-white w-full md:w-[50%]">
         {/* Agar text prop pass ho, toh wo yahan show hoga */}

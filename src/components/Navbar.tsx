@@ -1,77 +1,126 @@
-'use client';
-// resopnsive
-import { useState } from 'react'
-import Link from "next/link"
-import Image from "next/image"
-import { Menu, X } from 'lucide-react'
+"use client";
+
+import { useState } from "react";
+import { IoSearch } from "react-icons/io5"; // Search Icon
+import { PiHandbagBold } from "react-icons/pi"; // Shopping Bag Icon
+import Link from "next/link"; // Import Link from Next.js
 
 export default function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const menuItems = [
-    { name: "Home", href: "/", active: true },
-    { name: "Menu", href: "/menu" },
-    { name: "Blog", href: "/blog" },
-    { name: "Pages", href: "/pages" },
-    { name: "About", href: "/about" },
-    { name: "Shop", href: "/shop" },
-    { name: "Contact", href: "/contact" },
-  ]
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
-    <header className="w-full bg-[#0D0D0D] fixed top-0 px-4 sm:px-6 lg:px-[15.62%] py-4 lg:py-7">
-      <nav className="flex items-center justify-between">
+    <nav className="bg-black text-white shadow-md">
+      <div className="container mx-auto px-6 lg:px-12 py-4 flex justify-between items-center">
         {/* Logo */}
-        <Link
-          href="/"
-          className="text-[20px] sm:text-[24px] leading-[32px] font-bold text-white font-helvetica z-10"
-        >
-          Food<span className="text-[#FF9F0D]">tuck</span>
+        <Link href="/" className="text-2xl font-bold">
+          Food<span className="text-orange-500">tuck</span>
         </Link>
 
-        {/* Mobile Menu Toggle */}
-        <button
-          className="lg:hidden text-white z-10"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        {/* Large Screen Navigation */}
+        <div className="hidden lg:flex items-center justify-between flex-1 ml-8">
+          {/* Navigation Links */}
+          <div className="flex space-x-6">
+            <Link href="/" className="hover:text-orange-500 transition">
+              Home
+            </Link>
+            <Link href="/menu" className="hover:text-orange-500 transition">
+              Menu
+            </Link>
+            <Link href="/blog" className="hover:text-orange-500 transition">
+              Blog
+            </Link>
+            <Link href="/pages" className="hover:text-orange-500 transition">
+              Pages
+            </Link>
+            <Link href="/about" className="hover:text-orange-500 transition">
+              About
+            </Link>
+            <Link href="/shop" className="hover:text-orange-500 transition">
+              Shop
+            </Link>
+            <Link href="/contact" className="hover:text-orange-500 transition">
+              Contact
+            </Link>
+            <Link href="/faq" className="hover:text-orange-500 transition">
+              FAQ
+            </Link>
+          </div>
 
+          {/* Search Bar */}
+          <div className="flex items-center bg-gray-800 px-3 py-2 rounded-full w-[200px] lg:w-[250px] ml-8">
+            <input
+              type="text"
+              placeholder="Search..."
+              className="bg-transparent text-white placeholder-gray-400 focus:outline-none w-full text-sm"
+            />
+            <IoSearch className="text-orange-500 ml-2" />
+          </div>
+
+          {/* Shopping Bag Icon */}
+          <div className="ml-8">
+            <PiHandbagBold className="text-white text-2xl hover:text-orange-500 transition" />
+          </div>
+        </div>
+
+        {/* Hamburger Icon (Small Screens) */}
+        <div className="lg:hidden text-2xl cursor-pointer" onClick={toggleMenu}>
+          {isMenuOpen ? "✕" : "≡"}
+        </div>
+      </div>
+
+      {/* Collapsible Menu for Small Screens */}
+      <div
+        className={`${
+          isMenuOpen ? "block" : "hidden"
+        } lg:hidden bg-black text-white mt-4 space-y-4 px-6`}
+      >
         {/* Navigation Links */}
-        <ul className={`
-          fixed inset-0 bg-[#0D0D0D] flex flex-col items-center justify-center gap-6
-          lg:static lg:flex-row lg:bg-transparent lg:gap-[32px]
-          transition-all duration-300 ease-in-out
-          ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible lg:opacity-100 lg:visible'}
-        `}>
-          {menuItems.map((item) => (
-            <li key={item.name}>
-              <Link
-                href={item.href}
-                className={`text-[16px] leading-6 ${
-                  item.active ? "text-[#FF9F0D] font-bold" : "text-white"
-                } font-inter hover:text-[#FF9F0D] transition-colors`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-
-        {/* Icons */}
-        <div className="hidden lg:flex items-center gap-4">
-          <Link href="/" className="text-white hover:text-[#FF9F0D] transition-colors">
-            <Image src="/search.png" alt="search" width={24} height={24} />
+        <div className="flex flex-col space-y-4">
+          <Link href="/" className="hover:text-orange-500 transition">
+            Home
           </Link>
-          <Link href="/" className="text-white hover:text-[#FF9F0D] transition-colors">
-            <Image src="/User.png" alt="user" width={24} height={24} />
+          <Link href="/Menu" className="hover:text-orange-500 transition">
+            Menu
           </Link>
-          <Link href="/" className="text-white hover:text-[#FF9F0D] transition-colors">
-            <Image src="/Tote.png" alt="cart" width={24} height={24} />
+          <Link href="/blog" className="hover:text-orange-500 transition">
+            Blog
+          </Link>
+          <Link href="/pages" className="hover:text-orange-500 transition">
+            Pages
+          </Link>
+          <Link href="/about" className="hover:text-orange-500 transition">
+            About
+          </Link>
+          <Link href="/shop" className="hover:text-orange-500 transition">
+            Shop
+          </Link>
+          <Link href="/contact" className="hover:text-orange-500 transition">
+            Contact
+          </Link>
+          <Link href="/faq" className="hover:text-orange-500 transition">
+            FAQ
           </Link>
         </div>
-      </nav>
-    </header>
-  )
+
+        {/* Search Bar */}
+        <div className="flex items-center bg-gray-800 px-3 py-2 rounded-full w-full">
+          <input
+            type="text"
+            placeholder="Search..."
+            className="bg-transparent text-white placeholder-gray-400 focus:outline-none w-full text-sm"
+          />
+          <IoSearch className="text-orange-500 ml-2" />
+        </div>
+
+        {/* Shopping Bag Icon */}
+        <div>
+          <PiHandbagBold className="text-white text-2xl hover:text-orange-500 transition" />
+        </div>
+      </div>
+    </nav>
+  );
 }
