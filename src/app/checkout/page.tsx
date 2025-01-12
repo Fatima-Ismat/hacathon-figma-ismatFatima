@@ -1,115 +1,209 @@
 import React from 'react'
-import Image from 'next/image'
-import { FaCheck } from 'react-icons/fa6'
-import FoodCategory from '../foodcategory/page'
+import Hero from './Hero'
+import Image from 'next/image';
 
-
-
-function Hero() {
+function Checkout() {
   return (
     <>
-    <section className='bg-black px-3 md:px-[135px] flex flex-col justify-evenly md:flex-row  md:items-center py-[50px]'>
-        {/* Heading */}
-        <div className='text-white w-full md:w-[50%]'>
-  <h1 className='md:text-[32px] text-[24px] font-normal text-[#FF9F0D] font whitespace-nowrap'>
-    Its Quick & Amusing!
-  </h1>
+      <Hero />
 
-  <h1 className='text-[25px] md:text-[50px] font-bold whitespace-nowrap md:whitespace-normal'>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="flex justify-center items-center mt-10">
+          <div className="w-full max-w-md bg-white p-6 rounded-lg shadow-lg">
+            <p className="text-[#373F50] font-bold text-lg mb-4">Shipping Address</p>
+            <form className="space-y-4">
+              <div>
+                <label htmlFor="Fname" className="block text-sm font-medium text-gray-700">First Name</label>
+                <input
+                  type="text"
+                  name="Fname"
+                  id="Fname"
+                  className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FF9F0D] focus:border-transparent"
+                />
+              </div>
 
-    <span className='text-[#FF9F0D]'>Th</span>e Art of speed food Quality
-  </h1>
+              <div>
+                <label htmlFor="Email" className="block text-sm font-medium text-gray-700">Email</label>
+                <input
+                  type="email"
+                  name="Email"
+                  id="Email"
+                  className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FF9F0D] focus:border-transparent"
+                />
+              </div>
 
-  <p className='text-[10px] md:text-[16px] font-normal'>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Varius sed pharetra dictum neque massa congue
-  </p>
+              <div>
+                <label htmlFor="Company" className="block text-sm font-medium text-gray-700">Company</label>
+                <input
+                  type="text"
+                  name="Company"
+                  id="Company"
+                  className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FF9F0D] focus:border-transparent"
+                />
+              </div>
 
-  <div className='flex flex-col md:flex-row items-center md:items-start'>
+              <div>
+                <label htmlFor="City" className="block text-sm font-medium text-gray-700">City</label>
+                <input
+                  type="text"
+                  name="City"
+                  id="City"
+                  className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FF9F0D] focus:border-transparent"
+                />
+              </div>
 
-  <button className='bg-[#FF9F0D] text-white w-[100px] h-[30px] md:w-[190px] md:h-[60px] rounded-[40px] mt-[32px] hover:bg-yellow-800'>
-    See More
-  </button>
-  </div>
-</div>
+              <div>
+                <label htmlFor="Address1" className="block text-sm font-medium text-gray-700">Address 1</label>
+                <input
+                  type="text"
+                  name="Address1"
+                  id="Address1"
+                  className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FF9F0D] focus:border-transparent"
+                />
+              </div>
+            </form>
 
-        {/* Image */}
+            <p className="text-[#333333] font-medium mt-6">Billing Address</p>
+            <div className="flex items-center mt-2">
+              <input
+                type="checkbox"
+                id="billingAddress"
+                className="mr-2 w-4 h-4 text-[#FF9F0D] focus:ring-2 focus:ring-[#FF9F0D] border-gray-300 rounded"
+              />
+              <label htmlFor="billingAddress" className="text-sm text-gray-700">Same as shipping address</label>
+            </div>
 
-        <div className='mt-[50px] md:mt-0 '>   
-            <Image 
-                src="/food.png"
-                alt='Hero Image'
-                width={700}
-                height={500}
-                className=''
-            />
-
+            <div className="flex justify-between items-center mt-6">
+              <button className="text-white bg-[#FF9F0D] px-6 py-3 rounded-md hover:bg-[#e68d00]">
+                Back to cart
+              </button>
+            </div>
+          </div>
         </div>
-    </section>
-        <section className="bg-black px-3 md:px-[135px] flex flex-col justify-evenly md:flex-row  md:items-center py-[50px]">
-      
 
-      {/* Image */}
+        <div className="flex justify-center items-center mt-10">
+          <div className="w-full max-w-md bg-white p-6 rounded-lg shadow-lg">
+            <form className="space-y-4">
+              <div>
+                <label htmlFor="Lname" className="block text-sm font-medium text-gray-700">Last Name</label>
+                <input
+                  type="text"
+                  name="Lname"
+                  id="Lname"
+                  className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FF9F0D] focus:border-transparent"
+                />
+              </div>
 
+              <div>
+                <label htmlFor="Number" className="block text-sm font-medium text-gray-700">Phone Number</label>
+                <input
+                  type="number"
+                  name="Number"
+                  id="Number"
+                  className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FF9F0D] focus:border-transparent"
+                />
+              </div>
 
+              <div>
+                <label htmlFor="Zip" className="block text-sm font-medium text-gray-700">Zip Code</label>
+                <input
+                  type="number"
+                  name="Zip"
+                  id="Zip"
+                  className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FF9F0D] focus:border-transparent"
+                />
+              </div>
 
+              <div>
+                <label htmlFor="Country" className="block text-sm font-medium text-gray-700">Country</label>
+                <select
+                  name="Country"
+                  id="Country"
+                  defaultValue=""
+                  className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FF9F0D] focus:border-transparent"
+                >
+                  <option value="" disabled>Select your country</option>
+                  <option value="PAK">Pakistan</option>
+                  <option value="Canada">Canada</option>
+                  <option value="USA">United States</option>
+                  <option value="India">India</option>
+                  <option value="Australia">Australia</option>
+                </select>
+              </div>
 
-      {/* Heading */}
-      <div className="text-white w-full md:w-[50%]">
-        <h1 className="md:text-[32px] text-[24px] font-normal text-[#FF9F0D] font whitespace-nowrap font-greatVibes">
-          About us
-        </h1>
+              <div>
+                <label htmlFor="Address2" className="block text-sm font-medium text-gray-700">Address 2</label>
+                <input
+                  type="text"
+                  name="Address2"
+                  id="Address2"
+                  className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FF9F0D] focus:border-transparent"
+                />
+              </div>
+            </form>
 
-        <h1 className="text-[20px] md:text-[50px] font-bold whitespace-nowrap md:whitespace-normal">
-          <span className="text-[#FF9F0D]">We</span> Create the best foody
-          product
-        </h1>
+            <button className="mt-6 w-full text-white bg-[#FF9F0D] px-6 py-3 rounded-md hover:bg-[#e68d00]">
+              Proceed to shipping
+            </button>
+          </div>
+        </div>
 
-        <p className="text-[10px] md:text-[16px] font-normal">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam
-          pellentesque bibendum non dui volutpat fringilla bibendum. Urna, elit
-          augue urna, vitae feugiat pretium donec id elementum. Ultrices mattis
-          sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in
-          consequat.
-        </p>
+        <div className='border rounded-[6px] bg-white mt-10'>
+          <div className="space-y-6 ml-10 mt-8">
+            <div className="flex items-center space-x-4">
+              <Image src="/Chicken-tikka.png" alt="Chicken Tikka" height={20} width={60} />
+              <div>
+                <p className='text-[#333333] font-bold'>Chicken Tikka Kabab</p>
+                <p className='text-[#4F4F4F] font-normal'>150 gm net</p>
+                <p className='text-[#4F4F4F] font-normal'>50$</p>
+              </div>
+            </div>
 
-        <ul>
-          <li className="text-[10px] md:text-[16px] font-normal mt-10 flex">
-            <span className="mr-[10px]">
-              <FaCheck />
-            </span>{" "}
-            Lacus nisi, et ac dapibus sit eu velit in consequat.
-          </li>
-          <li className="text-[10px] md:text-[16px] font-normal mt-10 flex">
-            <span className="mr-[10px]">
-              <FaCheck />
-            </span>{" "}
-            Quisque diam pellentesque bibendum non dui volutpat fringilla{" "}
-          </li>
-          <li className="text-[10px] md:text-[16px] font-normal mt-10 flex">
-            <span className="mr-[10px]">
-              <FaCheck />
-            </span>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit
-          </li>
-        </ul>
+            <div className="flex items-center space-x-4">
+              <Image src="/Chicken-tikka.png" alt="Chicken Tikka" height={20} width={60} />
+              <div>
+                <p className='text-[#333333] font-bold'>Chicken Tikka Kabab</p>
+                <p className='text-[#4F4F4F] font-normal'>150 gm net</p>
+                <p className='text-[#4F4F4F] font-normal'>50$</p>
+              </div>
+            </div>
 
-        <div className="flex flex-col md:flex-row items-center md:items-start">
-          <button className="bg-[#FF9F0D] text-white w-[100px] h-[30px] md:w-[190px] md:h-[60px] rounded-[40px] mt-[32px] hover:bg-yellow-800">
-            See More
-          </button>
+            <div className="flex items-center space-x-4">
+              <Image src="/Chicken-tikka.png" alt="Chicken Tikka" height={20} width={60} />
+              <div>
+                <p className='text-[#333333] font-bold'>Chicken Tikka Kabab</p>
+                <p className='text-[#4F4F4F] font-normal'>150 gm net</p>
+                <p className='text-[#4F4F4F] font-normal'>50$</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-4 mt-10 ml-10 mr-10">
+            <p className='text-[#4F4F4F] font-normal flex justify-between'>
+              Sub-total <span>130$</span>
+            </p>
+            <p className='text-[#4F4F4F] font-normal flex justify-between'>
+              Shipping <span>Free</span>
+            </p>
+            <p className='text-[#4F4F4F] font-normal flex justify-between'>
+              Discount <span>25%</span>
+            </p>
+            <p className='text-[#4F4F4F] font-normal flex justify-between'>
+              Tax <span>54.76$</span>
+            </p>
+            <br />
+            <p className='text-[#4F4F4F] font-normal flex justify-between'>
+              Total <span>432.65$</span>
+            </p>
+            <button className='text-white bg-[#FF9F0D] px-6 py-3 rounded-md'>
+              Place an order
+            </button>
+          </div>
         </div>
       </div>
-      <div className="mt-[50px] md:mt-0 ">
-        <Image src="/about1.png" alt="Hero Image" className="" width={336} height={536} />
-        <div className="flex flex-col md:flex-row mt-[16px] md:mt-[0]">
-          <Image src="/about2.png" alt="Hero Image" className="mr-[16px] pt-[40px]" />
-          <Image src="about3.png" alt="Hero Image" className="pt-[40px]" />
-        </div>
-      </div>
-    </section>
-    <FoodCategory/>
+
     </>
   )
 }
 
-export default Hero
+export default Checkout;

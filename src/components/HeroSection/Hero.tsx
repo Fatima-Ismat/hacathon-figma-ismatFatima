@@ -1,43 +1,28 @@
-import React from "react";
-import Image from "next/image";
 
-interface HeroProps {
-  text?: string;  // text prop ko optional banaya
-}
+import React from 'react'
+import Link from 'next/link'
 
-function Hero({ text }: HeroProps) {  // text ko destructure kar ke receive kiya
+function Hero() {
   return (
-    <section className="bg-[#0D0D0D] px-3 md:px-[80px] lg:px-[135px] flex flex-col justify-evenly md:flex-row md:items-center py-[50px]">
-      {/* Heading */}
-      <div className="text-white w-full md:w-[50%]">
-        {/* Agar text prop pass ho, toh wo yahan show hoga */}
-        {text && (
-          <h1 className="text-[24px] md:text-[40px] lg:text-[50px] font-bold whitespace-normal mt-3 text-center md:text-left">
-            <span className="text-[#FF9F0D]">{text}</span>
+    <section className='w-full bg-[url("/heropic.png")] bg-cover bg-no-repeat bg-center py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28'>
+      <div className='container mx-auto px-4'>
+        <div className='flex flex-col items-center mt-20'>
+          <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-white font-bold text-center mb-4 sm:mb-6'>
+            Our Menu
           </h1>
-        )}
-
-        <p className="text-[12px] md:text-[14px] lg:text-[16px] font-normal mt-4 text-center md:text-left">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Varius sed pharetra dictum neque massa congue.
-        </p>
-
-        <div className="flex flex-col md:flex-row items-center justify-center md:justify-start mt-6">
-          <button className="bg-[#FF9F0D] text-white w-[100px] h-[30px] md:w-[160px] md:h-[50px] lg:w-[190px] lg:h-[60px] rounded-[40px] hover:bg-yellow-800">
-            See More
-          </button>
+          <div className='text-base sm:text-lg md:text-xl flex gap-2 text-center justify-center'>
+            <Link href="/" className='text-white hover:text-[#FF9F0D] transition-colors duration-300'>
+              Home
+            </Link>
+            <span className='text-white'>/</span>
+            <Link href="/menu" className='text-[#FF9F0D]'>
+              Menu
+            </Link>
+          </div>
         </div>
       </div>
-
-      {/* Image */}
-      <div className="mt-[30px] md:mt-0 md:w-[50%] flex justify-center">
-        <Image
-          src="/hero.png"
-          alt="Hero Image"
-          width={800} height={950} className="max-w-full"
-        />
-      </div>
     </section>
-  );
+  )
 }
 
-export default Hero;
+export default Hero

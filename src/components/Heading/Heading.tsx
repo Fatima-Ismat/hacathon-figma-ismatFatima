@@ -11,4 +11,4 @@ function Heading(props:{text: string}) {
   )
 }
 
-export default Heading;
+export default Heading

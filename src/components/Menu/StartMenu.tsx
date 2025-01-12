@@ -1,24 +1,24 @@
-import Image from 'next/image';
+/* eslint-disable @next/next/no-img-element */
+
 import { menuItems } from '@/constant/Menu';
 import { Coffee } from 'lucide-react';
 import Heading from '../Heading/Heading';
 
 export default function StarterMenu() {
   return (
-    <section className="w-full mx-auto mt-[120px] px-4 sm:px-6 lg:px-8">
-      <div className="container mx-auto py-16 flex flex-col lg:flex-row gap-12">
-        {/* Image Section */}
-        <div className="w-full lg:w-[448px] mb-8 lg:mb-0">
-          <Image
-            src="/menu.png" 
-            alt="Starter dish" 
+    <section className="w-full mx-auto mt-[120px] px-4 sm:px-6 md:px-8 lg:px-12">
+      <div className="container mx-auto py-16 flex flex-col md:flex-row gap-12">
+        <div className="w-full mb-8 md:mb-0 flex justify-center">
+          <img
+            src="/menu.png"
+            alt="Starter dish"
             width={448}
             height={626}
-            className="w-full h-auto max-w-full rounded-lg shadow-lg"
+            className="w-[70%] sm:w-[60%] md:w-[50%] lg:w-[448px] h-auto max-w-full rounded-lg shadow-lg"
           />
         </div>
-        {/* Menu Content */}
-        <div className="w-full lg:w-1/2 lg:pl-8">
+
+        <div className="w-full md:w-1/2 md:pl-8">
           <div className="flex flex-col mb-8">
             <Coffee className="ml-2 text-[#FF9F0D]" size={24} />
             <Heading text="Starter Menu" />
